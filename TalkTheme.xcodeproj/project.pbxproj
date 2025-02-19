@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1BF07972D4A311B0004B65B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07942D4A311B0004B65B /* ContentView.swift */; };
 		C1BF07982D4A311B0004B65B /* TalkThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */; };
 		C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */; };
 		C1BF079A2D4A311B0004B65B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07932D4A311B0004B65B /* Assets.xcassets */; };
+		C1BF079C2D4A3C4A0004B65B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF079B2D4A3C4A0004B65B /* HomeView.swift */; };
+		C1BF079E2D4A40B50004B65B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF079D2D4A40B50004B65B /* StartView.swift */; };
+		C1BF07A22D4A45480004B65B /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A12D4A45480004B65B /* PasswordView.swift */; };
+		C1BF07A52D4A48630004B65B /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A42D4A48630004B65B /* ThemeView.swift */; };
+		C1BF07A72D4BA9CC0004B65B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A62D4BA9CC0004B65B /* ResultView.swift */; };
+		C1BF07A92D5CAF2B0004B65B /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */; };
+		C1BF07AC2D5CB23C0004B65B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C1BF07AB2D5CB23C0004B65B /* FirebaseAnalytics */; };
+		C1BF07B62D65E7460004B65B /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07B52D65E7460004B65B /* Room.swift */; };
+		C1BF07B92D65E7D60004B65B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C1BF07B82D65E7D60004B65B /* FirebaseFirestore */; };
+		C1BF07BB2D65ED1C0004B65B /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07BA2D65ED1C0004B65B /* FirestoreClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C1BF07802D4A31140004B65B /* TalkTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1BF07932D4A311B0004B65B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1BF07942D4A311B0004B65B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkThemeApp.swift; sourceTree = "<group>"; };
+		C1BF079B2D4A3C4A0004B65B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C1BF079D2D4A40B50004B65B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		C1BF07A12D4A45480004B65B /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		C1BF07A42D4A48630004B65B /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		C1BF07A62D4BA9CC0004B65B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		C1BF07B52D65E7460004B65B /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		C1BF07BA2D65ED1C0004B65B /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BF07AC2D5CB23C0004B65B /* FirebaseAnalytics in Frameworks */,
+				C1BF07B92D65E7D60004B65B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BF07962D4A311B0004B65B /* TalkTheme */,
+				C1BF07B72D65E7D60004B65B /* Frameworks */,
 				C1BF07812D4A31140004B65B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,10 +80,24 @@
 			children = (
 				C1BF07922D4A311B0004B65B /* Preview Content */,
 				C1BF07932D4A311B0004B65B /* Assets.xcassets */,
-				C1BF07942D4A311B0004B65B /* ContentView.swift */,
+				C1BF079B2D4A3C4A0004B65B /* HomeView.swift */,
+				C1BF07B52D65E7460004B65B /* Room.swift */,
+				C1BF07BA2D65ED1C0004B65B /* FirestoreClient.swift */,
+				C1BF079D2D4A40B50004B65B /* StartView.swift */,
+				C1BF07A12D4A45480004B65B /* PasswordView.swift */,
+				C1BF07A42D4A48630004B65B /* ThemeView.swift */,
+				C1BF07A62D4BA9CC0004B65B /* ResultView.swift */,
 				C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */,
+				C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */,
 			);
 			path = TalkTheme;
+			sourceTree = "<group>";
+		};
+		C1BF07B72D65E7D60004B65B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +117,8 @@
 			);
 			name = TalkTheme;
 			packageProductDependencies = (
+				C1BF07AB2D5CB23C0004B65B /* FirebaseAnalytics */,
+				C1BF07B82D65E7D60004B65B /* FirebaseFirestore */,
 			);
 			productName = TalkTheme;
 			productReference = C1BF07802D4A31140004B65B /* TalkTheme.app */;
@@ -113,6 +148,9 @@
 			);
 			mainGroup = C1BF07772D4A31130004B65B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C1BF07AA2D5CB23C0004B65B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C1BF07812D4A31140004B65B /* Products */;
 			projectDirPath = "";
@@ -129,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */,
+				C1BF07A92D5CAF2B0004B65B /* GoogleService-Info (1).plist in Resources */,
 				C1BF079A2D4A311B0004B65B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BF07972D4A311B0004B65B /* ContentView.swift in Sources */,
+				C1BF07A22D4A45480004B65B /* PasswordView.swift in Sources */,
+				C1BF079C2D4A3C4A0004B65B /* HomeView.swift in Sources */,
+				C1BF07BB2D65ED1C0004B65B /* FirestoreClient.swift in Sources */,
+				C1BF07B62D65E7460004B65B /* Room.swift in Sources */,
 				C1BF07982D4A311B0004B65B /* TalkThemeApp.swift in Sources */,
+				C1BF07A52D4A48630004B65B /* ThemeView.swift in Sources */,
+				C1BF07A72D4BA9CC0004B65B /* ResultView.swift in Sources */,
+				C1BF079E2D4A40B50004B65B /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +392,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1BF07AA2D5CB23C0004B65B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1BF07AB2D5CB23C0004B65B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1BF07AA2D5CB23C0004B65B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C1BF07B82D65E7D60004B65B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1BF07AA2D5CB23C0004B65B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1BF07782D4A31130004B65B /* Project object */;
 }
