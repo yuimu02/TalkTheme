@@ -15,7 +15,7 @@
 		C1BF07A22D4A45480004B65B /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A12D4A45480004B65B /* PasswordView.swift */; };
 		C1BF07A52D4A48630004B65B /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A42D4A48630004B65B /* ThemeView.swift */; };
 		C1BF07A72D4BA9CC0004B65B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A62D4BA9CC0004B65B /* ResultView.swift */; };
-		C1BF07A92D5CAF2B0004B65B /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */; };
+		C1BF07A92D5CAF2B0004B65B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07A82D5CAF2B0004B65B /* GoogleService-Info.plist */; };
 		C1BF07AC2D5CB23C0004B65B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C1BF07AB2D5CB23C0004B65B /* FirebaseAnalytics */; };
 		C1BF07B62D65E7460004B65B /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07B52D65E7460004B65B /* Room.swift */; };
 		C1BF07B92D65E7D60004B65B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C1BF07B82D65E7D60004B65B /* FirebaseFirestore */; };
@@ -32,7 +32,7 @@
 		C1BF07A12D4A45480004B65B /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		C1BF07A42D4A48630004B65B /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		C1BF07A62D4BA9CC0004B65B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		C1BF07A82D5CAF2B0004B65B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1BF07B52D65E7460004B65B /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		C1BF07BA2D65ED1C0004B65B /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +88,7 @@
 				C1BF07A42D4A48630004B65B /* ThemeView.swift */,
 				C1BF07A62D4BA9CC0004B65B /* ResultView.swift */,
 				C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */,
-				C1BF07A82D5CAF2B0004B65B /* GoogleService-Info (1).plist */,
+				C1BF07A82D5CAF2B0004B65B /* GoogleService-Info.plist */,
 			);
 			path = TalkTheme;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */,
-				C1BF07A92D5CAF2B0004B65B /* GoogleService-Info (1).plist in Resources */,
+				C1BF07A92D5CAF2B0004B65B /* GoogleService-Info.plist in Resources */,
 				C1BF079A2D4A311B0004B65B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

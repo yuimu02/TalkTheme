@@ -10,30 +10,29 @@ import SwiftUI
 struct StartView: View {
     var body: some View {
         
-        NavigationStack {
+        VStack {
             NavigationLink {
                 PasswordView()
             } label: {
                 Text("つくる")
-                    .shadow(color: .black, radius: 3, x: 5, y: 5)
                     .font(.system(size: 30))
                     .fontWeight(.bold)
                     .padding(20)
-                    .background(Color(red: 0.8, green: 0.1, blue: 0.2))
-                    .foregroundColor(.white)
-                    .padding(50)
+                    .foregroundColor(.black)
+                    .background(Color.white.opacity(0.8))
+                    .border(Color.white, width: 4)
             }
             
             NavigationLink {
                 PasswordView()
             } label: {
                 Text("はいる")
-                    .shadow(color: .black, radius: 3, x: 5, y: 5)
                     .font(.system(size: 30))
                     .fontWeight(.bold)
                     .padding(20)
-                    .background(Color(red: 0.9, green: 0.9, blue: 0))
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
+                    .background(Color.white.opacity(0.8))
+                    .border(Color.white, width: 4)
             }
         }
         .navigationBarBackButtonHidden(true)
