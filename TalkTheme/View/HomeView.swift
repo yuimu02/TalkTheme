@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var name: String = ""
+    
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         NavigationStack {
@@ -24,11 +25,12 @@ struct HomeView: View {
                     
                         Image("Home")
 
-                    TextField("名前を入力", text: $name)
+                    TextField("名前を入力", text: $viewModel.name)
                         .textFieldStyle(.roundedBorder)
                     
                     NavigationLink {
-                        StartView()
+                        PasswordView()
+                            .environmentObject(viewModel)
                     } label: {
                         Text("はじめる")
                             .font(.system(size: 30))

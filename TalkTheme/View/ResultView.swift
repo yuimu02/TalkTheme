@@ -11,9 +11,8 @@ import SwiftUI
     
     
     struct ResultView: View {
-        @State private var theme: String = ""
-        @State private var player: String = ""
-        @State private var finishedanimation: Bool = false
+        @EnvironmentObject var viewModel: ViewModel
+        
         var body: some View {
                     ZStack {
                         
@@ -27,15 +26,15 @@ import SwiftUI
 //                                .shadow(color: Color.pink, radius: 20 )
 //                                .shadow(color: Color.pink, radius: 5 )
 //                                .shadow(color: Color.pink, radius: 7 )
-                            Text(theme)
+                            Text(viewModel.selectedTheme)
                                 .font(.system(size: 60))
                             
                             Text("誰")
                                 .font(.system(size: 40))
-                            Text(player)
+                            Text(viewModel.selectedPlayer)
                             
                             NavigationLink {
-                                StartView()
+                                PasswordView()
                             } label: {
                                 Text("終了")
                                     .font(.system(size: 30))

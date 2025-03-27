@@ -8,35 +8,37 @@
 import SwiftUI
 
 struct PasswordView: View {
-    @State private var password: String = ""
-    @State var presentTheme: Bool = false
-    var firestoreClient = FirestoreClient()
+    
+    @EnvironmentObject var viewModel: ViewModel
+    
     var body: some View {
+        ZStack {
+            Color.yellow
+                .ignoresSafeArea()
             VStack{
                 Text("パスワード")
                     .font(.system(size: 20))
-                TextField("パスワードを入力", text: $password)
+                TextField("パスワードを入力", text: $viewModel.password)
                     .textFieldStyle(.roundedBorder)
                 Button {
-                    Task {
-                        try! await firestoreClient.searchRoom(passcode: password)
-                        presentTheme = true
-                    }
+                    viewModel.searchRoom()
                 } label: {
                     Text("つくる")
-                        .font(.system(size: 20))
+                        .font(.system(size: 30))
                         .fontWeight(.bold)
                         .padding(20)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
+                        .background(Color.white.opacity(0.8))
+                        .border(Color.white, width: 4)
                         .padding(50)
                 }
             }
             .padding(30)
-            .navigationDestination(isPresented: $presentTheme) {
+            .navigationDestination(isPresented: $viewModel.presentTheme) {
                 ThemeView()
             }
         }
+    }
 }
 
 #Preview {

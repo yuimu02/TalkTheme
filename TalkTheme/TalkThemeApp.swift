@@ -14,7 +14,7 @@ struct TalkThemeApp: App {
     
     var body: some Scene {
         WindowGroup {
-             HomeView()
+            HomeView().environmentObject(ViewModel())
         }
     }
 }

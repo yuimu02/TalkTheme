@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ThemeView: View {
-    @State private var theme: String = ""
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        
+        ZStack {
+            Color.yellow
+                .ignoresSafeArea()
             VStack{
+                Text(viewModel.room.passcode)
                 Text("テーマ")
                     .font(.system(size: 40))
-                TextField("テーマを入力", text: $theme)
+                TextField("テーマを入力", text: $viewModel.theme)
                     .textFieldStyle(.roundedBorder)
                 NavigationLink {
                     ResultView()
@@ -30,6 +33,7 @@ struct ThemeView: View {
                 }
             }
             .padding(30)
+        }
     }
     
 }
