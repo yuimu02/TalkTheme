@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var viewModel: ViewModel
+     
+    @AppStorage(UserDefaultsKey.name.rawValue) var name = ""
     
     var body: some View {
         NavigationStack {
@@ -25,7 +27,7 @@ struct HomeView: View {
                     
                         Image("Home")
 
-                    TextField("名前を入力", text: $viewModel.name)
+                    TextField("名前を入力", text: $name)
                         .textFieldStyle(.roundedBorder)
                     
                     NavigationLink {
@@ -61,6 +63,9 @@ struct HomeView: View {
             }
             //Color.yellow
             .ignoresSafeArea()
+            .onAppear {
+                    viewModel.name = name
+            }
         }
         
         
