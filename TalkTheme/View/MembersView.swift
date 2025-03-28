@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct MembersView: View {
-    
-    let members = ["あおい", "ゆい", "ひかる"]
-    
-    
+    @EnvironmentObject var viewModel: ViewModel
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         ZStack {
             Color.yellow
@@ -20,7 +19,7 @@ struct MembersView: View {
                 HStack {
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        ForEach(members, id: \.self) { member in
+                        ForEach(viewModel.room.members, id: \.self) { member in
                             Text(member)
                         }
                     }
@@ -29,7 +28,9 @@ struct MembersView: View {
                 .padding(32)
                 
                 HStack {
-                    Button(action: {}) {
+                    Button {
+                        dismiss()
+                    } label: {
                         Text("戻る")
                             .font(.system(size: 30))
                             .fontWeight(.bold)
@@ -37,10 +38,12 @@ struct MembersView: View {
                             .foregroundColor(.black)
                             .background(Color.white.opacity(0.8))
                             .border(Color.white, width: 4)
-                            .padding(10)
                     }
                     
-                    Button(action: {}) {
+                    Button {
+                        viewModel.presentTheme = true
+                        viewModel.changeRoomStatus(status: .inputing)
+                    } label: {
                         Text("スタート")
                             .font(.system(size: 30))
                             .fontWeight(.bold)
@@ -48,10 +51,13 @@ struct MembersView: View {
                             .foregroundColor(.black)
                             .background(Color.white.opacity(0.8))
                             .border(Color.white, width: 4)
-                            .padding(10)
+                            .padding(50)
                     }
                 }
                 .padding(.top, 20)
+            }
+            .navigationDestination(isPresented: $viewModel.presentTheme) {
+                ThemeView()
             }
         }
     }

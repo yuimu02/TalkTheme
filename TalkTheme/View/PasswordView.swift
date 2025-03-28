@@ -34,8 +34,9 @@ struct PasswordView: View {
                 }
             }
             .padding(30)
-            .navigationDestination(isPresented: $viewModel.presentTheme) {
-                ThemeView()
+            .navigationDestination(isPresented: $viewModel.presentMembers) {
+                MembersView()
+                    .environmentObject(viewModel)
             }
         }
     }

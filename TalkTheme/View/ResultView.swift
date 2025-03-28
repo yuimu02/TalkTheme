@@ -34,9 +34,9 @@ import SwiftUI
                             Text(viewModel.selectedPlayer)
                             
                             NavigationLink {
-                                PasswordView()
+                                ContinueView()
                             } label: {
-                                Text("終了")
+                                Text("会話スタート")
                                     .font(.system(size: 30))
                                     .fontWeight(.bold)
                                     .padding(20)

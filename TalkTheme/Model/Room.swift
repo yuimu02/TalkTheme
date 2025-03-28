@@ -14,17 +14,17 @@ struct Room: Codable {
     var status: Status
     var selectedUserid: String
     var selectedTopicid: String
-    var members: [Member]
-    var topics: [Topic]
+    var members: [String]
+    var topics: [String]
 }
 
 struct Member: Codable {
-    var userId: String
+    var name: String
 }
 
 struct Topic: Codable {
     @DocumentID var id: String?
-    var userId: String
+    var name: String
 }
 
 enum Status: String, Codable {

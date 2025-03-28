@@ -9,7 +9,15 @@ import SwiftUI
 
 struct WaitingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text ("回答済　◯/◯")
+        VStack(spacing: 40) {
+            ProgressView()
+                .progressViewStyle(.circular)
+                .padding()
+                .tint(Color.black)
+        }
+        .padding()
+        Text ("スマホを丸く並べてね")
     }
 }
 

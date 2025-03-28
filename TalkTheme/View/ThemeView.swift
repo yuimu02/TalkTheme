@@ -14,7 +14,7 @@ struct ThemeView: View {
             Color.yellow
                 .ignoresSafeArea()
             VStack{
-                Text(FirestoreClient().room.passcode)
+                Text(viewModel.room.passcode)
                 Text("テーマ")
                     .font(.system(size: 40))
                 TextField("テーマを入力", text: $viewModel.theme)
