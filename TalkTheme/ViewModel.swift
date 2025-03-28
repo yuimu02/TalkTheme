@@ -14,8 +14,10 @@ class ViewModel: NSObject, ObservableObject{
     @Published var password = ""
     @Published var presentMembers = false
     @Published var presentTheme = false
-    @Published var selectedTheme = ""
-    @Published var selectedPlayer = ""
+    @Published var presentWaiting = false
+    @Published var presentselecting = false
+    
+    @Published var room: Room = Room(passcode: "", status: .waiting, selectedUser: "", selectedTopic: "", members: [], selectedMembers: [], topics: [])
     
     func searchRoom() {
         Task { @MainActor in
@@ -26,7 +28,6 @@ class ViewModel: NSObject, ObservableObject{
     
     
     private let roomsRef = Firestore.firestore().collection("rooms")
-    @Published var room: Room = Room(passcode: "", status: .waiting, selectedUserid: "", selectedTopicid: "", members: [], topics: [])
     
     func searchRoom(passcode: String) async throws {
         let room = try await roomsRef.whereField("passcode", isEqualTo: passcode).getDocuments().documents.compactMap { try? $0.data(as: Room.self) }.first
@@ -34,7 +35,7 @@ class ViewModel: NSObject, ObservableObject{
             listenRoomData(roomId: room.id!) //部屋があるとき
         } else {
             //ないとき
-            let newRoom = Room(passcode: passcode, status: .waiting, selectedUserid: "", selectedTopicid: "", members: [], topics: [])
+            let newRoom = Room(passcode: passcode, status: .waiting, selectedUser: "", selectedTopic: "", members: [], selectedMembers: [], topics: [])
             let encodedRoom = try Firestore.Encoder().encode(newRoom)
             let newRoomRef = try await roomsRef.addDocument(data: encodedRoom)
             listenRoomData(roomId: newRoomRef.documentID)
@@ -53,8 +54,13 @@ class ViewModel: NSObject, ObservableObject{
             }
             do {
                 self.room = try snapshot.data(as: Room.self)
-                if self.room.status == .inputing {
+                switch self.room.status {
+                case .inputing:
                     self.presentTheme = true
+                case .selecting:
+                    self.presentselecting = true
+                default:
+                    break
                 }
             } catch {
                 print(error.localizedDescription)
@@ -69,6 +75,20 @@ class ViewModel: NSObject, ObservableObject{
     }
     
     func postTopic() {
+        roomsRef.document(room.id ?? "").updateData([
+            "topics": FieldValue.arrayUnion([theme])
+        ])
+        presentWaiting = true
+    }
+    func selectTopic() {
+        let selectedTopic = room.topics.randomElement()!
+        let selectedUser = room.members.filter({ room.selectedMembers.contains($0) == false }).randomElement()!
+        roomsRef.document(room.id ?? "").updateData([
+            "selectedTopic": selectedTopic,
+            "selectedUser": selectedUser,
+            "topics": FieldValue.arrayRemove([selectedTopic]),
+            "selectedMembers": FieldValue.arrayUnion([selectedUser])
+        ])
         
     }
 }

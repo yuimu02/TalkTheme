@@ -13,15 +13,16 @@ struct ContinueView: View {
             Color.yellow
                 .ignoresSafeArea()
             VStack {
-                NavigationLink {
-                    ThemeView()
+                Button {
+                    
                 } label: {
                     Text("次のお題")
                         .font(.system(size: 30))
                         .fontWeight(.bold)
                         .padding(20)
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
+                        .background(Color.white.opacity(0.8))
+                        .border(Color.white, width: 4)
                         .padding(50)
                 }
                 NavigationLink {
@@ -31,12 +32,14 @@ struct ContinueView: View {
                         .font(.system(size: 30))
                         .fontWeight(.bold)
                         .padding(20)
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
+                        .background(Color.white.opacity(0.8))
+                        .border(Color.white, width: 4)
                         .padding(50)
                 }
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

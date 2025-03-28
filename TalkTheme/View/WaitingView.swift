@@ -8,16 +8,42 @@
 import SwiftUI
 
 struct WaitingView: View {
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
-        Text ("回答済　◯/◯")
-        VStack(spacing: 40) {
-            ProgressView()
-                .progressViewStyle(.circular)
+        ZStack{
+            Color.yellow
+                .ignoresSafeArea()
+            VStack {
+                Text ("回答済　\(viewModel.room.topics.count)/\(viewModel.room.members.count)")
+                VStack(spacing: 40) {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .padding()
+                        .tint(Color.black)
+                }
+                
                 .padding()
-                .tint(Color.black)
+                Text ("スマホを丸く並べてね")
+                Button {
+                    viewModel.changeRoomStatus(status: .selecting)
+                    viewModel.presentselecting = true
+                    viewModel.selectTopic()
+                } label: {
+                    Text("準備完了")
+                        .font(.system(size: 30))
+                        .fontWeight(.bold)
+                        .padding(20)
+                        .foregroundColor(.black)
+                        .background(Color.white.opacity(0.8))
+                        .border(Color.white, width: 4)
+                        .padding(50)
+                }
+                .navigationDestination(isPresented: $viewModel.presentselecting) {
+                    SelectView()
+                }
+            }
         }
-        .padding()
-        Text ("スマホを丸く並べてね")
+        .navigationBarBackButtonHidden()
     }
 }
 

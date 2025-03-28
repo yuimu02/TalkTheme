@@ -19,8 +19,8 @@ struct ThemeView: View {
                     .font(.system(size: 40))
                 TextField("テーマを入力", text: $viewModel.theme)
                     .textFieldStyle(.roundedBorder)
-                NavigationLink {
-                    ResultView()
+                Button {
+                    viewModel.postTopic()
                 } label: {
                     Text("次へ")
                         .font(.system(size: 30))
@@ -33,6 +33,10 @@ struct ThemeView: View {
                 }
             }
             .padding(30)
+            .navigationDestination(isPresented: $viewModel.presentWaiting) {
+                WaitingView()
+            }
+            .navigationBarBackButtonHidden()
         }
     }
     

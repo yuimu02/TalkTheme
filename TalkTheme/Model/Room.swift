@@ -12,9 +12,10 @@ struct Room: Codable {
     @DocumentID var id: String?
     var passcode: String
     var status: Status
-    var selectedUserid: String
-    var selectedTopicid: String
+    var selectedUser: String
+    var selectedTopic: String
     var members: [String]
+    var selectedMembers: [String]
     var topics: [String]
 }
 

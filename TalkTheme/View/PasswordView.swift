@@ -39,6 +39,7 @@ struct PasswordView: View {
                     .environmentObject(viewModel)
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

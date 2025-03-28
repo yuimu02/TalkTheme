@@ -60,6 +60,7 @@ struct MembersView: View {
                 ThemeView()
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
