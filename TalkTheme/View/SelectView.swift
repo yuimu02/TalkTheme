@@ -49,8 +49,10 @@ import SwiftUI
                                 if viewModel.room.topics.isEmpty{
                                     viewModel.presentWaiting = false
                                     viewModel.presentWaiting = false
+                                    viewModel.changeRoomStatus(status: .inputing)
                                 } else {
                                     viewModel.selectTopic()
+                                    
                                 }
                             } label: {
                                 Text(viewModel.room.topics.isEmpty ? "もう一度遊ぶ" : "次のお題")
@@ -62,6 +64,7 @@ import SwiftUI
                                     .border(Color.white, width: 4)
                                     .padding(50)
                             }
+                            
                             Button {
                                 viewModel.presentMembers = false
                                 viewModel.presentTheme = false

@@ -15,6 +15,8 @@ struct ThemeView: View {
                 .ignoresSafeArea()
             VStack{
                 Text(viewModel.room.passcode)
+                    .underline(color: .black)
+                    .padding(30)
                 Text("テーマ")
                     .font(.system(size: 40))
                 TextField("テーマを入力", text: $viewModel.theme)

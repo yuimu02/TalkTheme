@@ -16,9 +16,9 @@ struct PasswordView: View {
             Color.yellow
                 .ignoresSafeArea()
             VStack{
-                Text("パスワード")
-                    .font(.system(size: 20))
-                TextField("パスワードを入力", text: $viewModel.password)
+                Text("合言葉")
+                    .font(.system(size: 40, weight: .semibold, design: .rounded))
+                TextField("合言葉を入力", text: $viewModel.password)
                     .textFieldStyle(.roundedBorder)
                 Button {
                     viewModel.searchRoom()
