@@ -34,6 +34,9 @@ struct ThemeView: View {
                         .border(Color.white, width: 4)
                         .padding(50)
                 }
+                .disabled(viewModel.theme.isEmpty)
+                .opacity(viewModel.theme.isEmpty ? 0.3 : 1)
+                
             }
             .padding(30)
             .navigationDestination(isPresented: $viewModel.presentWaiting) {

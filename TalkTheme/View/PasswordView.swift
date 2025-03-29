@@ -32,6 +32,8 @@ struct PasswordView: View {
                         .border(Color.white, width: 4)
                         .padding(50)
                 }
+                .disabled(viewModel.password.isEmpty)
+                .opacity(viewModel.password.isEmpty ? 0.3 : 1)
             }
             .padding(30)
             .navigationDestination(isPresented: $viewModel.presentMembers) {

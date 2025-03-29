@@ -20,7 +20,18 @@ struct MembersView: View {
                     
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(viewModel.room.members, id: \.self) { member in
-                            Text(member)
+                            HStack {
+                                Text(member)
+                                Spacer()
+                                Button(action: {
+                                    if let index = viewModel.room.members.firstIndex(of: member) {
+                                        viewModel.room.members.remove(at: index)
+                                    }
+                                }) { Text("×")
+                                        .foregroundColor(.black)
+                                        .padding(.leading, 10)
+                                }
+                            }
                         }
                     }
                     Spacer()

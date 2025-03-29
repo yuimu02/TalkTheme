@@ -15,23 +15,27 @@ import SwiftUI
         
         var body: some View {
                     ZStack {
-                        Color.yellow
+                        Color(viewModel.room.selectedUser == viewModel.name ? .red : .green)
                             .ignoresSafeArea()
                         VStack {
                             Text("お題")
-                                .font(.system(size: 40))
+                                .font(.system(size: 20))
 //                                .foregroundColor(.white)
 //                                .shadow(color: Color.pink, radius: 3 )
 //                                .shadow(color: Color.pink, radius: 20 )
 //                                .shadow(color: Color.pink, radius: 5 )
 //                                .shadow(color: Color.pink, radius: 7 )
                             Text(viewModel.room.selectedTopic)
-                                .font(.system(size: 30))
+                                .font(.system(size: 40))
+                                .underline(color: .black)
+                            
+                            Spacer().frame(height: 30)
                             
                             Text("誰")
-                                .font(.system(size: 40))
+                                .font(.system(size: 20))
                             Text(viewModel.room.selectedUser)
-                                .font(.system(size: 30))
+                                .font(.system(size: 40))
+                                .underline(color: .black)
 //                            NavigationLink {
 //                                ContinueView()
 //                            } label: {

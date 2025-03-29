@@ -29,7 +29,6 @@ struct HomeView: View {
 
                     TextField("名前を入力", text: $name)
                         .textFieldStyle(.roundedBorder)
-                    
                     NavigationLink {
                         PasswordView()
                             .environmentObject(viewModel)
@@ -44,8 +43,9 @@ struct HomeView: View {
                             .padding(50)
                         //        .shadow(color: Color.pink, radius: 3 )
                         
-                        
                     }
+                    .disabled(name.isEmpty)  // 名前が空のときボタンを無効化
+                    .opacity(name.isEmpty ? 0.3 : 1)
                 }
                 //            Button{
                 //            } label: {
