@@ -47,9 +47,9 @@ import SwiftUI
                             Button {
                                 
                                 if viewModel.room.topics.isEmpty{
-                                    viewModel.presentWaiting = false
-                                    viewModel.presentWaiting = false
-                                    viewModel.changeRoomStatus(status: .inputing)
+                                    viewModel.presentselecting = false
+                                    viewModel.presentTheme = false
+                                    viewModel.changeRoomStatus(status: .waiting)
                                 } else {
                                     viewModel.selectTopic()
                                     
@@ -65,11 +65,13 @@ import SwiftUI
                                     .padding(50)
                             }
                             
+                            
                             Button {
                                 viewModel.presentMembers = false
                                 viewModel.presentTheme = false
                                 viewModel.presentWaiting = false
                                 viewModel.presentWaiting = false
+                                viewModel.changeRoomStatus(status: .inputing)
                             } label: {
                                 Text("終了")
                                     .font(.system(size: 30))

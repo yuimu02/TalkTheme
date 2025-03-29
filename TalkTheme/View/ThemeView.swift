@@ -23,6 +23,7 @@ struct ThemeView: View {
                     .textFieldStyle(.roundedBorder)
                 Button {
                     viewModel.postTopic()
+                    viewModel.theme = ""
                 } label: {
                     Text("次へ")
                         .font(.system(size: 30))
