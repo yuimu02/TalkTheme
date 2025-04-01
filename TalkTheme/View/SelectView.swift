@@ -15,7 +15,7 @@ import SwiftUI
         
         var body: some View {
                     ZStack {
-                        Color(viewModel.isSelectedUser ? .red : .green)
+                        Color(viewModel.isSelectedUser ? .orange : .blue.opacity(0.7))
                             .ignoresSafeArea()
                         VStack {
                             Text("お題")
@@ -57,6 +57,7 @@ import SwiftUI
                                         viewModel.resetRoom()
                                     } else {
                                         viewModel.selectTopic()
+                                        viewModel.changeRoomStatus(status: .selecting)
                                     }
                                 } label: {
                                     Text(viewModel.room.topics.isEmpty ? "もう一度遊ぶ" : "次のお題")

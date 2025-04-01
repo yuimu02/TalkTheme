@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C14900EE2D9BFB580024068B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14900ED2D9BFB580024068B /* Assets.xcassets */; };
 		C1BF07982D4A311B0004B65B /* TalkThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */; };
 		C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */; };
-		C1BF079A2D4A311B0004B65B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07932D4A311B0004B65B /* Assets.xcassets */; };
 		C1BF079C2D4A3C4A0004B65B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF079B2D4A3C4A0004B65B /* HomeView.swift */; };
 		C1BF07A22D4A45480004B65B /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A12D4A45480004B65B /* PasswordView.swift */; };
 		C1BF07A52D4A48630004B65B /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A42D4A48630004B65B /* ThemeView.swift */; };
@@ -26,9 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C14900ED2D9BFB580024068B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BF07802D4A31140004B65B /* TalkTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C1BF07932D4A311B0004B65B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkThemeApp.swift; sourceTree = "<group>"; };
 		C1BF079B2D4A3C4A0004B65B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C1BF07A12D4A45480004B65B /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
@@ -77,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */,
+				C14900ED2D9BFB580024068B /* Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -91,7 +92,6 @@
 				C1DA479D2D9524D900942514 /* Utility */,
 				C1BF07A82D5CAF2B0004B65B /* GoogleService-Info.plist */,
 				C1BF07922D4A311B0004B65B /* Preview Content */,
-				C1BF07932D4A311B0004B65B /* Assets.xcassets */,
 			);
 			path = TalkTheme;
 			sourceTree = "<group>";
@@ -200,8 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */,
+				C14900EE2D9BFB580024068B /* Assets.xcassets in Resources */,
 				C1BF07A92D5CAF2B0004B65B /* GoogleService-Info.plist in Resources */,
-				C1BF079A2D4A311B0004B65B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

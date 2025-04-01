@@ -29,7 +29,8 @@ class ViewModel: NSObject, ObservableObject{
     
     
     private let roomsRef = Firestore.firestore().collection("rooms")
-    
+
+
     func searchRoom(passcode: String) async throws {
         let room = try await roomsRef.whereField("passcode", isEqualTo: passcode).getDocuments().documents.compactMap { try? $0.data(as: Room.self) }.first
         if let room {
@@ -131,7 +132,14 @@ class ViewModel: NSObject, ObservableObject{
         }
     }
     
+    func updateMembers() {
+
+        roomsRef.document(room.id ?? "").updateData([
+            "members": room.members
+        ])
+    }
     
+
     func resetRoom() {
         roomsRef.document(room.id ?? "").updateData([
             "selectedTopic": "",

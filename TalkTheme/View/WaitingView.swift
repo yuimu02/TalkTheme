@@ -29,8 +29,8 @@ struct WaitingView: View {
                 
                 if viewModel.room.topics.count == viewModel.room.members.count {
                     Button {
-                        viewModel.changeRoomStatus(status: .selecting)
                         viewModel.selectTopic()
+                        viewModel.changeRoomStatus(status: .selecting)
                     } label: {
                         Text("準備完了")
                             .font(.system(size: 30))
@@ -41,6 +41,8 @@ struct WaitingView: View {
                             .border(Color.white, width: 4)
                             .padding(50)
                     }
+                    .disabled(viewModel.room.topics.count != viewModel.room.members.count)
+                    .opacity(viewModel.room.topics.count != viewModel.room.members.count ? 0.3 : 1)
                 }
             }
         }

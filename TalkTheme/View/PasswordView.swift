@@ -28,7 +28,7 @@ struct PasswordView: View {
                         viewModel.password = ""
                     }
                 } label: {
-                    Text("つくる")
+                    Text("OK!")
                         .font(.system(size: 30))
                         .fontWeight(.bold)
                         .padding(20)
