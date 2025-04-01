@@ -29,8 +29,7 @@ struct WaitingView: View {
                 
                 if viewModel.room.topics.count == viewModel.room.members.count {
                     Button {
-                        viewModel.changeRoomStatus(status: .selected)
-                        viewModel.presentselecting = true
+                        viewModel.changeRoomStatus(status: .selecting)
                         viewModel.selectTopic()
                     } label: {
                         Text("準備完了")

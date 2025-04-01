@@ -16,6 +16,7 @@ class ViewModel: NSObject, ObservableObject{
     @Published var presentTheme = false
     @Published var presentWaiting = false
     @Published var presentselecting = false
+    @Published var isSelectedUser = false
     
     @Published var room: Room = Room(passcode: "", status: .waiting, selectedUser: "", selectedTopic: "", members: [], selectedMembers: [], topics: [])
     
@@ -56,14 +57,17 @@ class ViewModel: NSObject, ObservableObject{
                 let newRoomData = try snapshot.data(as: Room.self)
                 switch newRoomData.status {
                 case .waiting:
-                    if self.room.status == .selected {
+                    if self.room.status == .selecting {
                         self.presentselecting = false
                         self.presentTheme = false
                     }
                 case .inputing:
                     self.presentTheme = true
-                case .selected:
+                case .selecting:
                     self.presentselecting = true
+                    self.startSelecting()
+                case .selected:
+                    self.isSelectedUser = newRoomData.selectedUser == self.name
                 case .finished:
                     self.password = ""
                     self.presentMembers = false
@@ -102,6 +106,31 @@ class ViewModel: NSObject, ObservableObject{
             "selectedMembers": FieldValue.arrayUnion([selectedUser])
         ])
     }
+    
+    var selectTimer: Timer!
+    
+    func startSelecting() {
+        isSelectedUser = false
+        var loopCount = 0
+        var selectIndex = 0
+        selectTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats:true) { _ in
+            if selectIndex < self.room.members.count - 1 {
+                selectIndex += 1
+            }
+            else {
+                selectIndex = 0
+            }
+            self.isSelectedUser = self.room.members.firstIndex(of: self.name)!
+            == selectIndex
+            loopCount += 1
+            if loopCount > self.room.members.count * 3 && selectIndex ==
+                self.room.members.firstIndex(of: self.room.selectedUser)! {
+                self.selectTimer.invalidate()
+                self.changeRoomStatus(status: .selected)
+            }
+        }
+    }
+    
     
     func resetRoom() {
         roomsRef.document(room.id ?? "").updateData([

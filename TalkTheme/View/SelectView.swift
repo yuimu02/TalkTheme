@@ -15,7 +15,7 @@ import SwiftUI
         
         var body: some View {
                     ZStack {
-                        Color(viewModel.room.selectedUser == viewModel.name ? .red : .green)
+                        Color(viewModel.isSelectedUser ? .red : .green)
                             .ignoresSafeArea()
                         VStack {
                             Text("お題")
@@ -30,62 +30,62 @@ import SwiftUI
                                 .underline(color: .black)
                             
                             Spacer().frame(height: 30)
-                            
-                            Text("回答者")
-                                .font(.system(size: 20))
-                            Text(viewModel.room.selectedUser)
-                                .font(.system(size: 40))
-                                .underline(color: .black)
-//                            NavigationLink {
-//                                ContinueView()
-//                            } label: {
-//                                Text("会話スタート")
-//                                    .font(.system(size: 30))
-//                                    .fontWeight(.bold)
-//                                    .padding(20)
-//                                    .foregroundColor(.black)
-//                                    .background(Color.white.opacity(0.8))
-//                                    .border(Color.white, width: 4)
-//                                    .padding(50)
-//                            }
-                            Button {
-                                
-                                if viewModel.room.topics.isEmpty{
-                                    viewModel.presentselecting = false
-                                    viewModel.presentTheme = false
-                                    viewModel.changeRoomStatus(status: .waiting)
-                                    viewModel.resetRoom()
-                                } else {
-                                    viewModel.selectTopic()
+                            if viewModel.room.status == .selected {
+                                Text("回答者")
+                                    .font(.system(size: 20))
+                                Text(viewModel.room.selectedUser)
+                                    .font(.system(size: 40))
+                                    .underline(color: .black)
+                                //                            NavigationLink {
+                                //                                ContinueView()
+                                //                            } label: {
+                                //                                Text("会話スタート")
+                                //                                    .font(.system(size: 30))
+                                //                                    .fontWeight(.bold)
+                                //                                    .padding(20)
+                                //                                    .foregroundColor(.black)
+                                //                                    .background(Color.white.opacity(0.8))
+                                //                                    .border(Color.white, width: 4)
+                                //                                    .padding(50)
+                                //                            }
+                                Button {
+                                    
+                                    if viewModel.room.topics.isEmpty{
+                                        viewModel.presentselecting = false
+                                        viewModel.presentTheme = false
+                                        viewModel.changeRoomStatus(status: .waiting)
+                                        viewModel.resetRoom()
+                                    } else {
+                                        viewModel.selectTopic()
+                                    }
+                                } label: {
+                                    Text(viewModel.room.topics.isEmpty ? "もう一度遊ぶ" : "次のお題")
+                                        .font(.system(size: 30))
+                                        .fontWeight(.bold)
+                                        .padding(20)
+                                        .foregroundColor(.black)
+                                        .background(Color.white.opacity(0.8))
+                                        .border(Color.white, width: 4)
+                                        .padding(50)
                                 }
-                            } label: {
-                                Text(viewModel.room.topics.isEmpty ? "もう一度遊ぶ" : "次のお題")
-                                    .font(.system(size: 30))
-                                    .fontWeight(.bold)
-                                    .padding(20)
-                                    .foregroundColor(.black)
-                                    .background(Color.white.opacity(0.8))
-                                    .border(Color.white, width: 4)
-                                    .padding(50)
-                            }
-                            
-                            
-                            Button {
-                                viewModel.presentMembers = false
-                                viewModel.presentTheme = false
-                                viewModel.presentWaiting = false
-                                viewModel.presentWaiting = false
-                                viewModel.changeRoomStatus(status: .finished)
-                                viewModel.resetRoom()
-                            } label: {
-                                Text("終了")
-                                    .font(.system(size: 30))
-                                    .fontWeight(.bold)
-                                    .padding(20)
-                                    .foregroundColor(.black)
-                                    .background(Color.white.opacity(0.8))
-                                    .border(Color.white, width: 4)
-                                    .padding(50)
+                                
+                                Button {
+                                    viewModel.presentMembers = false
+                                    viewModel.presentTheme = false
+                                    viewModel.presentWaiting = false
+                                    viewModel.presentWaiting = false
+                                    viewModel.changeRoomStatus(status: .finished)
+                                    viewModel.resetRoom()
+                                } label: {
+                                    Text("終了")
+                                        .font(.system(size: 30))
+                                        .fontWeight(.bold)
+                                        .padding(20)
+                                        .foregroundColor(.black)
+                                        .background(Color.white.opacity(0.8))
+                                        .border(Color.white, width: 4)
+                                        .padding(50)
+                                }
                             }
                         }
                     }
