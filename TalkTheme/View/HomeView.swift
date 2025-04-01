@@ -16,19 +16,20 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.yellow
+                Image("Home")
+                    .resizable()
                     .ignoresSafeArea()
-                
+                    .scaledToFill()
                 VStack{
                     
 //                    Text("名前")
 //                        .font(.system(size: 40))
 //                        .fontWeight(.bold)
                     
-                        Image("Home")
 
                     TextField("名前を入力", text: $name)
                         .textFieldStyle(.roundedBorder)
+                        .padding(.top, 420)
                     NavigationLink {
                         PasswordView()
                             .environmentObject(viewModel)

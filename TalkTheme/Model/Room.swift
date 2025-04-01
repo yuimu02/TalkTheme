@@ -31,7 +31,7 @@ struct Topic: Codable {
 enum Status: String, Codable {
     case waiting
     case inputing
-    case selecting
+    case selected
     case resultShowing
     case finished
 }

@@ -13,8 +13,12 @@ struct MembersView: View {
 
     var body: some View {
         ZStack {
-            Color.yellow
+//            Color.yellow
+//                .ignoresSafeArea()
+            Image("Basic")
+                .resizable()
                 .ignoresSafeArea()
+                .scaledToFill()
             VStack {
                 HStack {
                     
@@ -23,13 +27,15 @@ struct MembersView: View {
                             HStack {
                                 Text(member)
                                 Spacer()
-                                Button(action: {
-                                    if let index = viewModel.room.members.firstIndex(of: member) {
-                                        viewModel.room.members.remove(at: index)
+                                if member != viewModel.name {
+                                    Button(action: {
+                                        if let index = viewModel.room.members.firstIndex(of: member) {
+                                            viewModel.room.members.remove(at: index)
+                                        }
+                                    }) { Text("×")
+                                            .foregroundColor(.black)
+                                            .padding(.leading, 10)
                                     }
-                                }) { Text("×")
-                                        .foregroundColor(.black)
-                                        .padding(.leading, 10)
                                 }
                             }
                         }

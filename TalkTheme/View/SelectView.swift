@@ -31,7 +31,7 @@ import SwiftUI
                             
                             Spacer().frame(height: 30)
                             
-                            Text("誰")
+                            Text("回答者")
                                 .font(.system(size: 20))
                             Text(viewModel.room.selectedUser)
                                 .font(.system(size: 40))
@@ -54,9 +54,9 @@ import SwiftUI
                                     viewModel.presentselecting = false
                                     viewModel.presentTheme = false
                                     viewModel.changeRoomStatus(status: .waiting)
+                                    viewModel.resetRoom()
                                 } else {
                                     viewModel.selectTopic()
-                                    
                                 }
                             } label: {
                                 Text(viewModel.room.topics.isEmpty ? "もう一度遊ぶ" : "次のお題")
@@ -75,7 +75,8 @@ import SwiftUI
                                 viewModel.presentTheme = false
                                 viewModel.presentWaiting = false
                                 viewModel.presentWaiting = false
-                                viewModel.changeRoomStatus(status: .inputing)
+                                viewModel.changeRoomStatus(status: .finished)
+                                viewModel.resetRoom()
                             } label: {
                                 Text("終了")
                                     .font(.system(size: 30))

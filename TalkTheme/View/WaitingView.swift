@@ -11,8 +11,10 @@ struct WaitingView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         ZStack{
-            Color.yellow
+            Image("Basic")
+                .resizable()
                 .ignoresSafeArea()
+                .scaledToFill()
             VStack {
                 Text ("回答済　\(viewModel.room.topics.count)/\(viewModel.room.members.count)")
                 VStack(spacing: 40) {
@@ -27,7 +29,7 @@ struct WaitingView: View {
                 
                 if viewModel.room.topics.count == viewModel.room.members.count {
                     Button {
-                        viewModel.changeRoomStatus(status: .selecting)
+                        viewModel.changeRoomStatus(status: .selected)
                         viewModel.presentselecting = true
                         viewModel.selectTopic()
                     } label: {

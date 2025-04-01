@@ -13,8 +13,10 @@ struct PasswordView: View {
     
     var body: some View {
         ZStack {
-            Color.yellow
+            Image("Basic")
+                .resizable()
                 .ignoresSafeArea()
+                .scaledToFill()
             VStack{
                 Text("合言葉")
                     .font(.system(size: 40, weight: .semibold, design: .rounded))
@@ -22,6 +24,9 @@ struct PasswordView: View {
                     .textFieldStyle(.roundedBorder)
                 Button {
                     viewModel.searchRoom()
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                        viewModel.password = ""
+                    }
                 } label: {
                     Text("つくる")
                         .font(.system(size: 30))

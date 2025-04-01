@@ -11,8 +11,10 @@ struct ThemeView: View {
     @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         ZStack {
-            Color.yellow
+            Image("Basic")
+                .resizable()
                 .ignoresSafeArea()
+                .scaledToFill()
             VStack{
                 Text(viewModel.room.passcode)
                     .underline(color: .black)
@@ -23,7 +25,9 @@ struct ThemeView: View {
                     .textFieldStyle(.roundedBorder)
                 Button {
                     viewModel.postTopic()
-                    viewModel.theme = ""
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                        viewModel.theme = ""
+                    }
                 } label: {
                     Text("次へ")
                         .font(.system(size: 30))

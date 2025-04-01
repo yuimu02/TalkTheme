@@ -53,15 +53,27 @@ class ViewModel: NSObject, ObservableObject{
                 return
             }
             do {
-                self.room = try snapshot.data(as: Room.self)
-                switch self.room.status {
+                let newRoomData = try snapshot.data(as: Room.self)
+                switch newRoomData.status {
+                case .waiting:
+                    if self.room.status == .selected {
+                        self.presentselecting = false
+                        self.presentTheme = false
+                    }
                 case .inputing:
                     self.presentTheme = true
-                case .selecting:
+                case .selected:
                     self.presentselecting = true
+                case .finished:
+                    self.password = ""
+                    self.presentMembers = false
+                    self.presentTheme = false
+                    self.presentWaiting = false
+                    self.presentWaiting = false
                 default:
                     break
                 }
+                self.room = newRoomData
             } catch {
                 print(error.localizedDescription)
             }
@@ -89,6 +101,14 @@ class ViewModel: NSObject, ObservableObject{
             "topics": FieldValue.arrayRemove([selectedTopic]),
             "selectedMembers": FieldValue.arrayUnion([selectedUser])
         ])
-        
+    }
+    
+    func resetRoom() {
+        roomsRef.document(room.id ?? "").updateData([
+            "selectedTopic": "",
+            "selectedUser": "",
+            "topics": [],
+            "selectedMembers": []
+        ])
     }
 }
