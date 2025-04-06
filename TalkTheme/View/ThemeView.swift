@@ -19,9 +19,10 @@ struct ThemeView: View {
                 Text(viewModel.room.passcode)
                     .underline(color: .black)
                     .padding(30)
-                Text("テーマ")
+                    .font(.system(size: 20))
+                Text("お題")
                     .font(.system(size: 40))
-                TextField("テーマを入力", text: $viewModel.theme)
+                TextField("お題を入力", text: $viewModel.theme)
                     .textFieldStyle(.roundedBorder)
                 Button {
                     viewModel.postTopic()

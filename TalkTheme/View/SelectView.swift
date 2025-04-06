@@ -15,16 +15,12 @@ import SwiftUI
         
         var body: some View {
                     ZStack {
-                        Color(viewModel.isSelectedUser ? .orange : .blue.opacity(0.7))
+                        Color(viewModel.isSelectedUser ? Color("Out") : Color("Safe"))
                             .ignoresSafeArea()
                         VStack {
-                            Text("お題")
+                            Text("お題は...")
                                 .font(.system(size: 20))
-//                                .foregroundColor(.white)
-//                                .shadow(color: Color.pink, radius: 3 )
-//                                .shadow(color: Color.pink, radius: 20 )
-//                                .shadow(color: Color.pink, radius: 5 )
-//                                .shadow(color: Color.pink, radius: 7 )
+
                             Text(viewModel.room.selectedTopic)
                                 .font(.system(size: 40))
                                 .underline(color: .black)
@@ -88,6 +84,7 @@ import SwiftUI
                                         .padding(50)
                                 }
                             }
+                            
                         }
                     }
                     .navigationBarBackButtonHidden()

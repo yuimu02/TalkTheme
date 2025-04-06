@@ -22,6 +22,11 @@ struct PasswordView: View {
                     .font(.system(size: 40, weight: .semibold, design: .rounded))
                 TextField("合言葉を入力", text: $viewModel.password)
                     .textFieldStyle(.roundedBorder)
+                    .padding(.bottom, 20)
+                
+                Text("みんなで合言葉を決めて入力してね！")
+                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                
                 Button {
                     viewModel.searchRoom()
                     DispatchQueue.main.asyncAfter(deadline: .now()+1) {

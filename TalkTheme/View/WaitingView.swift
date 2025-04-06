@@ -17,6 +17,7 @@ struct WaitingView: View {
                 .scaledToFill()
             VStack {
                 Text ("回答済　\(viewModel.room.topics.count)/\(viewModel.room.members.count)")
+                    .font(.system(size: 20, weight: .semibold))
                 VStack(spacing: 40) {
                     ProgressView()
                         .progressViewStyle(.circular)
@@ -26,6 +27,7 @@ struct WaitingView: View {
                 
                 .padding()
                 Text ("スマホを丸く並べてね")
+                    .font(.system(size: 20, weight: .semibold))
                 
                 if viewModel.room.topics.count == viewModel.room.members.count {
                     Button {

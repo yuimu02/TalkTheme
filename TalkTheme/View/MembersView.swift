@@ -22,12 +22,14 @@ struct MembersView: View {
             
             VStack {
                 
-                
+                Spacer()
+                    .frame(height: 100)
                     List {
 //                        VStack(alignment: .leading, spacing: 10) {
                             ForEach(viewModel.room.members, id: \.self) { member in
                                 HStack {
                                     Text(member)
+                                        .padding(.vertical, 5)
                                     Spacer()
                                     if member != viewModel.name {
                                         Button(action: {
@@ -47,14 +49,17 @@ struct MembersView: View {
                             }
 //                        }
             }
-                    .background(Color.clear)
+                    .listStyle(PlainListStyle())
+                    .frame(maxHeight: 300)
         
 //                    Spacer()
 //                .padding(32)
-                    .frame(maxHeight: 300)  // リストの最大高さを設定
                     .padding(16)
 
                     Spacer()
+                
+                Text("座っている順番に名前を並び替えてね！")
+                    .font(.system(size: 20, weight: .medium, design: .rounded))
                 
                 HStack {
                     Button {
@@ -85,7 +90,7 @@ struct MembersView: View {
                     .disabled(viewModel.room.members.count <= 1)
                     .opacity(viewModel.room.members.count <= 1 ? 0.3 : 1)
                 }
-                .padding(.top, 20)
+                .padding(.bottom, 200)
             }
             .navigationDestination(isPresented: $viewModel.presentTheme) {
                 ThemeView()
