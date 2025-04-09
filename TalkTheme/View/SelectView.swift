@@ -21,7 +21,8 @@ import SwiftUI
                             Text("お題は...")
                                 .font(.system(size: 20))
 
-                            Text(viewModel.room.selectedTopic)
+                            Text(viewModel.isShowingTheme ?
+                                viewModel.room.selectedTopic : "???")
                                 .font(.system(size: 40))
                                 .underline(color: .black)
                             

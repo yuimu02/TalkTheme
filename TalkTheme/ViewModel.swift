@@ -17,6 +17,7 @@ class ViewModel: NSObject, ObservableObject{
     @Published var presentWaiting = false
     @Published var presentselecting = false
     @Published var isSelectedUser = false
+    @Published var isShowingTheme = false
     
     @Published var room: Room = Room(passcode: "", status: .waiting, selectedUser: "", selectedTopic: "", members: [], selectedMembers: [], topics: [])
     
@@ -112,22 +113,26 @@ class ViewModel: NSObject, ObservableObject{
     
     func startSelecting() {
         isSelectedUser = false
-        var loopCount = 0
-        var selectIndex = 0
-        selectTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats:true) { _ in
-            if selectIndex < self.room.members.count - 1 {
-                selectIndex += 1
-            }
-            else {
-                selectIndex = 0
-            }
-            self.isSelectedUser = self.room.members.firstIndex(of: self.name)!
-            == selectIndex
-            loopCount += 1
-            if loopCount > self.room.members.count * 3 && selectIndex ==
-                self.room.members.firstIndex(of: self.room.selectedUser)! {
-                self.selectTimer.invalidate()
-                self.changeRoomStatus(status: .selected)
+        isShowingTheme = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.isShowingTheme = true
+            var loopCount = 0
+            var selectIndex = 0
+            self.selectTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats:true) {_ in 
+                if selectIndex < self.room.members.count - 1 {
+                    selectIndex += 1
+                }
+                else {
+                    selectIndex = 0
+                }
+                self.isSelectedUser = self.room.members.firstIndex(of: self.name)!
+                == selectIndex
+                loopCount += 1
+                if loopCount > self.room.members.count * 3 && selectIndex ==
+                    self.room.members.firstIndex(of: self.room.selectedUser)! {
+                    self.selectTimer.invalidate()
+                    self.changeRoomStatus(status: .selected)
+                }
             }
         }
     }
