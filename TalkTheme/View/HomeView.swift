@@ -48,17 +48,6 @@ struct HomeView: View {
                     .disabled(name.isEmpty)  // 名前が空のときボタンを無効化
                     .opacity(name.isEmpty ? 0.3 : 1)
                 }
-                //            Button{
-                //            } label: {
-                //                Text("始める")
-                //                    .font(.system(size: 30))
-                //                    .fontWeight(.bold)
-                //                    .padding(20)
-                //                    .background(Color.blue)
-                //                    .foregroundColor(.white)
-                //                    .padding(50)
-                //            }
-                //        }
                 .padding(30)
                 
             }
@@ -66,6 +55,9 @@ struct HomeView: View {
             .ignoresSafeArea()
             .onAppear {
                     viewModel.name = name
+            }
+            .onChange(of: name) {
+                viewModel.name = name
             }
         }
         
