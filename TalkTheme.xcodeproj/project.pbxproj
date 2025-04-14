@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C14900EE2D9BFB580024068B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14900ED2D9BFB580024068B /* Assets.xcassets */; };
 		C1BF07982D4A311B0004B65B /* TalkThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */; };
-		C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */; };
 		C1BF079C2D4A3C4A0004B65B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF079B2D4A3C4A0004B65B /* HomeView.swift */; };
 		C1BF07A22D4A45480004B65B /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A12D4A45480004B65B /* PasswordView.swift */; };
 		C1BF07A52D4A48630004B65B /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF07A42D4A48630004B65B /* ThemeView.swift */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		C14900ED2D9BFB580024068B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BF07802D4A31140004B65B /* TalkTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1BF07952D4A311B0004B65B /* TalkThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkThemeApp.swift; sourceTree = "<group>"; };
 		C1BF079B2D4A3C4A0004B65B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C1BF07A12D4A45480004B65B /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 		C1BF07922D4A311B0004B65B /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C1BF07912D4A311B0004B65B /* Preview Assets.xcassets */,
 				C14900ED2D9BFB580024068B /* Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -165,7 +162,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					C1BF077F2D4A31140004B65B = {
 						CreatedOnToolsVersion = 16.2;
@@ -199,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BF07992D4A311B0004B65B /* Preview Assets.xcassets in Resources */,
 				C14900EE2D9BFB580024068B /* Assets.xcassets in Resources */,
 				C1BF07A92D5CAF2B0004B65B /* GoogleService-Info.plist in Resources */,
 			);
@@ -264,6 +260,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = T3MXB7AQ8F;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -327,6 +324,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = T3MXB7AQ8F;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -356,7 +354,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TalkTheme/Preview Content\"";
-				DEVELOPMENT_TEAM = T3MXB7AQ8F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -389,7 +386,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TalkTheme/Preview Content\"";
-				DEVELOPMENT_TEAM = T3MXB7AQ8F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
